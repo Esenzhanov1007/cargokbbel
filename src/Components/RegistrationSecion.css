@@ -1,0 +1,54 @@
+.register-bg {
+    background: #F3F4F6;
+}
+
+.register-section-wrapper {
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.register-section {
+    width: 50%;
+}
+
+.register-title {
+    font-size: 32px;
+}
+
+.register-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.register-form-email, .register-form-password, .register-form-name, .register-form-code, .register-form-surname , .register-form-phone , .register-form-pickup {
+    margin-bottom: 20px;
+}
+
+.register-form-code-title, .register-form-email-title, .register-form-password-title, .register-form-pickup-title, .register-form-phone-title, .register-form-name-title, .register-form-surname-title {
+    margin: 5px 0;
+    font-weight: normal;
+}
+
+.register-form-btn {
+    margin-bottom: 25px;
+}
+
+.register-form-bottomtext {
+    text-align: center;
+}
+
+.have-acc {
+    margin-right: 5px;
+}
+
+.register-form-register-btn {
+    text-decoration: none;
+    color: #4E80EE;
+}
+
+.register-form-register-btn:hover {
+    text-decoration: underline;
+}

@@ -1,0 +1,28 @@
+.details-data {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+}
+
+.details-data-title {
+    font-size: 24px;
+}
+
+.details-data-info {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+
+.details-input-wrapper {
+    width: 49%;
+    margin: 0 0 20px;
+}
+
+.details-input-title {
+    font-size: 16px;
+    font-weight: normal;
+    color: #394150;
+    margin: 5px 0;
+}

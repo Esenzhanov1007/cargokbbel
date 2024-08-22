@@ -1,0 +1,72 @@
+.header-bg {
+    background: #121826;
+}
+
+.container {
+    width: 90%;
+    margin: 0 auto;
+}
+
+.header {
+    height: 80px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.header-logo-link {
+    text-decoration: none;
+}
+
+.header-logo-link-title {
+    color: #fff;
+    font-weight: bold;
+    font-size: 24px;
+}
+
+.header-links-profile-btn {
+    margin-left: 20px;
+}
+
+.header-links-tracking-btn, .header-links-profile-btn {
+    text-decoration: none;
+    color: #fff;
+}
+
+.header-links-tracking-btn:hover {
+    text-decoration: none;
+    color: #fff;
+    opacity: .5;
+}
+
+.header-links-profile-btn:hover{
+    text-decoration: none;
+    color: #fff;
+    opacity: .5;
+}
+
+.header-sign-in-btn {
+    text-decoration: none;
+    color: #fff;
+    margin-right: 20px;
+}
+
+.header-sign-in-btn:hover {
+    text-decoration: none;
+    color: #fff;
+    opacity: .5;
+    margin-right: 20px;
+}
+
+.header-sign-up-btn {
+    text-decoration: none;
+    color: #fff;
+    background: #4E80EE;
+    padding: 12px;
+    border-radius: 10px;
+}
+
+.header-sign-up-btn:hover {
+    background: #2563eb;
+}

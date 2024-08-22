@@ -1,0 +1,55 @@
+.login-bg {
+    background: #F3F4F6;
+}
+
+.login-section-wrapper {
+    width: 100%; 
+    display: flex;
+    justify-content: center;
+    padding: 80px 0;
+}
+
+.login-section {
+    width: 50%;
+}
+
+.login-title {
+    font-size: 32px;
+}
+
+.login-form {
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.login-form-email, .login-form-password {
+    margin-bottom: 25px;
+}
+
+.login-form-email-title, .login-form-password-title {
+    margin: 5px 0;
+    font-weight: normal;
+}
+
+.login-form-btn {
+    margin-bottom: 20px;
+}
+
+.login-form-bottomtext {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.no-acc, .have-code {
+    margin-right: 5px;
+}
+
+.login-form-register-btn, .login-form-usecode-btn {
+    text-decoration: none;
+    color: #4E80EE;
+}
+
+.login-form-register-btn:hover, .login-form-usecode-btn:hover {
+    text-decoration: underline;
+}

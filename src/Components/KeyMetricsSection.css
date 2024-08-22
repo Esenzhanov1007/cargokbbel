@@ -1,0 +1,33 @@
+.keymetrics-section {
+    padding-top: 80px;
+}
+
+.keymetrics-title {
+    font-size: 28px;
+    margin: 0 0 40px;
+}
+
+.keymetrics-data {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 100px;
+}
+
+.keymetrics-data-time, .keymetrics-data-price, .keymetrics-data-type {
+    width: 25%;
+    padding: 10px;
+    border: 1px #E6E7EB solid;
+    border-radius: 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.keymetrics-data-time-title, .keymetrics-data-price-title, .keymetrics-data-type-title {
+    font-size: 26px;
+}
+
+.keymetrics-data-price-price, .keymetrics-data-time-time, .keymetrics-data-type-type {
+    font-size: 34px;
+    font-style: bold;
+}

@@ -1,0 +1,15 @@
+@media only screen and (max-width: 599.98px) {
+    .register-section {
+        width: 100%;
+    }
+
+    .register-title {
+        font-size: 20px;   
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+    .register-section {
+        width: 100%;
+    }
+}

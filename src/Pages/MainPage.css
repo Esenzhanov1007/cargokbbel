@@ -1,0 +1,251 @@
+@media only screen and (max-width: 1199.98px) {
+    .adresses-logo-img {
+        height: 200px;
+    }
+}
+
+@media only screen and (max-width: 991.98px) {
+    .adresses-logo-img {
+        height: 150px;
+    }
+
+    .welcome-text {
+        width: 45%;
+    }
+
+    .welcome-image {
+        height: 380px;
+    }
+
+    .keymetrics-data {
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 767.98px) {
+
+    .header-logo {
+        margin-right: 10px;
+    }
+
+    .header-logo-link-title {
+        font-size: 22px;
+    }
+
+    .welcome-image-container {
+        display: none;
+    }
+
+    .welcome-text {
+        width: 100%;
+    }
+
+    .welcome-text-title {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    .welcome-text-description {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .welcome-text-links {
+        text-align: center;
+        padding-bottom: 50px;
+    }
+
+    .keymetrics-data {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .keymetrics-data-time, .keymetrics-data-price, .keymetrics-data-type {
+        width: 50%;
+        margin: 0 10px 20px;
+    }
+
+    .keymetrics-title {
+        text-align: center;
+    }
+
+    .adresses-logo-img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .adresses-title {
+        text-align: center;
+    }
+
+    .adresses-data {
+        flex-wrap: wrap;
+        justify-content: space-around;
+    }
+
+    .adresses-logo {
+        width: 150px;
+        margin: 0 20px;
+    }
+
+    .adresses-logo-btn {
+        width: 150px;
+    }
+
+    .pickup-title {
+        text-align: center;
+    }
+
+    .puckup-data {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .pickup-data-title {
+        width: 50%;
+        margin: 0 10px 20px;
+    }
+
+    .recentcargo-title {
+        text-align: center;
+    }
+
+    .recentcargo-data {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .recentcargo-data-box {
+        width: 50%;
+        margin: 0 10px 20px;
+        text-align: center;
+    }
+}
+
+@media only screen and (max-width: 599.98px) {
+
+    .header {
+        padding: 0;
+        height: 100px;
+    }
+
+    .header-logo {
+        margin-right: 10px;
+        width: 30%;
+    }
+
+    .header-logo-link-title {
+        font-size: 16px;
+    }
+
+    .header-links {
+        display: flex;
+        flex-direction: column;
+        text-align: right;
+    }
+
+    .header-links-tracking-btn {
+        margin-bottom: 10px;
+    }
+
+    .header-links-profile-btn {
+        margin-left: 0;
+    }
+
+    .header-sign {
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        width: 60%;
+    }
+
+    .header-sign-in-btn {
+        margin-bottom: 10px;
+        padding-top: 10px;
+    }
+
+    .welcome-image-container {
+        display: none;
+    }
+
+    .welcome-text {
+        width: 100%;
+    }
+
+    .welcome-text-title {
+        font-size: 34px;
+        text-align: center;
+    }
+
+    .welcome-text-description {
+        font-size: 22px;
+        text-align: center;
+    }
+
+    .welcome-text-links {
+        display: none;
+    }
+
+    .keymetrics-title {
+        text-align: center;
+    }
+
+    .adresses-logo-img {
+        height: 150px;
+        width: 150px;
+    }
+
+    .adresses-title {
+        text-align: center;
+    }
+
+    .adresses-data {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .adresses-logo {
+        width: 150px;
+    }
+
+    .adresses-logo-btn {
+        width: 150px;
+    }
+
+    .recentcargo-data-box {
+        width: 80%;
+        margin: 0 10px 20px;
+        text-align: center;
+    }
+
+    .footer-logo {
+        width: 100%;
+        margin: 0 0 20px;
+        text-align: center;
+    }
+
+    .footer-logo-text-link {
+        margin: 0 auto;
+    }
+
+    .footer-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .footer-links-contacts {
+        width: 100%;
+        margin: 0 10px;
+        text-align: center;
+        justify-content: space-around;
+    }
+
+    .pickup-data-name {
+        font-size: 20px;
+    }
+
+    .pickup-data-title {
+        width: 70%;
+    }
+}

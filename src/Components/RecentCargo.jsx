@@ -2,10 +2,11 @@ import axios from 'axios';
 import React from 'react'
 import { convertDate } from '../helpers/dateConverter'
 
-const baseURL = 'http://139.59.135.34:8000';
+const baseURL = 'https://cargokbbelovodsk1.kg';
 
 export const RecentCargo = (props) => {
 
+  console.log(props)
   const imageURL = `${baseURL}${props.img}`
 
   return (

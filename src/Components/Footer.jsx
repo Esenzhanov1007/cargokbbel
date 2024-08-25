@@ -24,7 +24,7 @@ export default function Footer() {
                         </div>
                         <div onClick={() => openInNewTab('https://wa.me/996702176304')} className="footer-links-contacts-link">
                             <WhatsAppOutlined style={{color: '#53A537', fontSize: '22px'}} />
-                            <span className='footer-links-contacts-text'>+996 555 123 456</span>
+                            <span className='footer-links-contacts-text'>+996 702 176 304</span>
                         </div>
                         <div onClick={() => openInNewTab('https://www.instagram.com/cargo_kb_belovodsk?igsh=MWp2cXkxMWh4YnQ0Nw%3D%3D')} className="footer-links-contacts-link">
                             <InstagramOutlined style={{color: '#E933B3', fontSize: '22px'}} />

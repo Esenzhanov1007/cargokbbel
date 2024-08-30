@@ -6,7 +6,11 @@ import { Link } from 'react-router-dom';
 export default function Footer() {
     function openInNewTab(url) {
         window.open(url, '_blank').focus();
-      }
+    }
+    const handleClick = (e) => {
+        e.preventDefault();
+        window.location.href = `tel:+996702176304`;
+    };
   return (
     <div className='footer-bg'>
         <div className="container">
@@ -20,7 +24,7 @@ export default function Footer() {
                     <div className="footer-links-contacts">
                         <div className="footer-links-contacts-link">
                             <PhoneOutlined style={{color: '#fff', fontSize: '22px'}} />
-                            <span className='footer-links-contacts-text'>+996 702 176 304</span>
+                            <span onClick={handleClick} className='footer-links-contacts-text'>+996 702 176 304</span>
                         </div>
                         <div onClick={() => openInNewTab('https://wa.me/996702176304')} className="footer-links-contacts-link">
                             <WhatsAppOutlined style={{color: '#53A537', fontSize: '22px'}} />

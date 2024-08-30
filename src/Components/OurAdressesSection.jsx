@@ -7,9 +7,11 @@ const OurAdressesSection = () => {
     const {cnAdresses} = useMain();
     const [showModal, setShowModal] = useState(false);
     const [modalContent, setModalContent] = useState({});
+    const [description, setDescription] = useState([]);
 
     const handleOpenModal = (content) => {
         setModalContent(content);
+        setDescription(content.description.split('/'));
         setShowModal(true);
     };
 
@@ -17,6 +19,7 @@ const OurAdressesSection = () => {
         setShowModal(false);
         setModalContent({});
     };
+
   return (
     <div className='adresses-bg'>
         <div className='container'>
@@ -47,10 +50,13 @@ const OurAdressesSection = () => {
             </div>
         </div>
         <AdressModal show={showModal} handleClose={handleCloseModal}>
-            <h2 style={{textAlign: 'center'}}>{modalContent.title}</h2>
+            <h2 style={{textAlign: 'center'}}>{modalContent?.title}</h2>
             <div className='modal-description-container'>    
-                <h5 style={{margin: '0'}}>Адрес:</h5>      
-                <p style={{margin: '0'}}>{modalContent.description}</p>
+                <div>
+                    {description ? description.map((e) => 
+                        <p>{e}</p>
+                    ) : ''}  
+                </div>  
             </div>
         </AdressModal>
     </div>

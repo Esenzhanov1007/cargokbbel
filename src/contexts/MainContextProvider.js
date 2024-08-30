@@ -2,7 +2,7 @@ import React, { createContext, useContext, useReducer } from 'react';
 
 import axios from 'axios'
 
-const APIID = 'https://cargokbbelovodsk1.kg/api/v1/main/'
+const APIID = 'https://api.cargokbbelovodsk1.kg/api/v1/main/'
 
 export const mainContext = createContext();
 

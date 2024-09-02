@@ -42,7 +42,7 @@ const AuthContextProvider = ({ children }) => {
         const config ={
           headers: {'Content-Type':'multipart/form-data',Authorization},
         };
-        const { data } = await axios(`https://cargokbbelovodsk1.kg/api/v1/track/`, config);
+        const { data } = await axios(`https://api.cargokbbelovodsk1.kg/api/v1/track/`, config);
 
         return data;
     }

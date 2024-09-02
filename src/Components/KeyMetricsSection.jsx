@@ -1,6 +1,6 @@
 import React from 'react';
 import './KeyMetricsSection.css';
-import { ClockCircleTwoTone, DollarTwoTone, CloudTwoTone } from '@ant-design/icons';
+import { ClockCircleTwoTone, DollarTwoTone, CarTwoTone } from '@ant-design/icons';
 
 export default function () {
   return (
@@ -20,8 +20,8 @@ export default function () {
                 </div>
                 <div className='keymetrics-data-type'>
                     <h3 className='keymetrics-data-type-title'>Способ доставки</h3>
-                    <CloudTwoTone twoToneColor="#E2B53F" style={{fontSize: '36px'}} />
-                    <h2 className='keymetrics-data-type-type'>Авиа</h2>
+                    <CarTwoTone twoToneColor="#E2B53F" style={{fontSize: '36px'}} />
+                    <h2 className='keymetrics-data-type-type'>Авто</h2>
                 </div>
             </div>
         </div>

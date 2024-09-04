@@ -11,7 +11,7 @@ const OurAdressesSection = () => {
 
     const handleOpenModal = (content) => {
         setModalContent(content);
-        setDescription(content.description.split('/'));
+        setDescription(content?.description.split('/'));
         setShowModal(true);
     };
 

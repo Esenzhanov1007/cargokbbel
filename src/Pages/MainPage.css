@@ -1,10 +1,36 @@
 @media only screen and (max-width: 1199.98px) {
+    .header {
+        height: 100px;
+    }
+    .header-sign {
+        width: 50%;
+        display: flex;
+        justify-content: end;
+        flex-wrap: wrap;
+        margin-top: 20px;
+    }
+
+    .header-sign-in-btn {
+        font-size: 16px;
+        align-self: center;
+    }
+
+    .header-sign-up-btn {
+        font-size: 16px;
+        padding: 5px;
+        align-self: center;
+    }
+
+    .header-sign-up-btn:last-child {
+        margin: 10px 0;
+    }
+    
     .adresses-logo-img {
         height: 200px;
     }
 }
 
-@media only screen and (max-width: 991.98px) {
+@media only screen and (max-width: 999.98px) {
     .adresses-logo-img {
         height: 150px;
     }
@@ -131,7 +157,7 @@
 
     .header-logo {
         margin-right: 10px;
-        width: 30%;
+        width: 60%;
     }
 
     .header-logo-link-title {
@@ -153,11 +179,8 @@
     }
 
     .header-sign {
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        width: 60%;
+        justify-content: end;
+        width: 40%;
     }
 
     .header-sign-in-btn {
@@ -181,10 +204,6 @@
     .welcome-text-description {
         font-size: 22px;
         text-align: center;
-    }
-
-    .welcome-text-links {
-        display: none;
     }
 
     .keymetrics-title {

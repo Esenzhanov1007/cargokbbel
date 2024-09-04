@@ -24,9 +24,10 @@ export default function WelcomeSection() {
                             <Link to='/details' className='welcome-text-tracking-link'>Отслеживание Груза</Link>
                             <Link to='/profile' className='welcome-text-profile-link'>Профиль</Link>
                             </div> : <></>}
-                        {isLogged ? <></> :  <div className='header-sign'>
+                        {isLogged ? <></> :  <div className='welcome-sign'>
                             <Link to='/signin' className='welcome-sign-in-btn'>Войти</Link>
-                            <Link to='/signup' className='header-sign-up-btn'>Зарегистрироваться</Link>
+                            <Link to='/signup' className='welcome-sign-up-btn'>Зарегистрироваться</Link>
+                            <Link to='/registerbycode' className='welcome-sign-up-btn'>Зарегистрироваться по старому коду</Link>
                             </div>}
                     </div>
                 </div>

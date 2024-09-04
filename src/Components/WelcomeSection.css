@@ -68,6 +68,8 @@
     border-radius: 10px;
     color: #fff;
     margin-right: 20px;
+    align-self: center;
+    margin-top: 20px;
 }
 
 .welcome-sign-in-btn:hover {
@@ -75,4 +77,28 @@
     color: #fff;
     margin-right: 20px;
     background: #121850;
+}
+
+.welcome-sign {
+    display: flex;  
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.welcome-sign-up-btn {
+    text-decoration: none;
+    color: #fff;
+    background: #4E80EE;
+    padding: 12px;
+    border-radius: 10px;
+    margin-right: 20px;
+    margin-top: 20px;
+}
+
+.welcome-sign-up-btn:last-child {
+}
+
+
+.welcome-sign-up-btn:hover {
+    background: #2563eb;
 }

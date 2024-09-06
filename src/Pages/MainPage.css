@@ -164,6 +164,17 @@
         font-size: 16px;
     }
 
+    .welcome-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        text-align: right;
+    }
+
+    .welcome-text-tracking-link, .welcome-text-profile-link {
+        margin-top: 10px;
+    }
+
     .header-links {
         display: flex;
         flex-direction: column;

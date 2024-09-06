@@ -3,11 +3,12 @@ import './RegistrationSecion.css'
 import { Input, Button, ConfigProvider, Select, Modal } from 'antd';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContextProvider';
+import { message } from 'antd';
 
 
 function RegistrationSecion() {
 
-    const [modalText, setModalText] = useState('Введите код отпрвленный вам на почту:')
+    const [modalText, setModalText] = useState('Введите код отправленный вам на почту:')
     const [code, setCode] = useState("");
     const [isOk, setIsOk] = useState(false);
     const [email, setEmail] = useState("");
@@ -17,13 +18,24 @@ function RegistrationSecion() {
     const [phone, setPhone] = useState("");
     const [pickupPoint, setPickupPoint] = useState("");
     const { register, handleCode } = useAuth();
+    const [messageApi, contextHolder] = message.useMessage();
+    const errorMessage = (message) => {
+        messageApi.open({
+          type: 'error',
+          content: message,
+          duration: 3,
+        });
+    };
   
     async function handleRegister(email, password, name, surname, phone, pickupPoint) {
-      let res = await register({ email, password, name, surname, phone, pickupPoint });
-      if(res.status != 400) {
-        setIsOk(true);
+      if(password.length >= 8) {
+        let res = await register({ email, password, name, surname, phone, pickupPoint });
+        if(res.status != 400) {
+            setIsOk(true);
+        }
+      } else {
+            errorMessage("Пароль должен содержать 8 или более символов!")
       }
-      setPickupPoint('Беловодск');
     }
 
     const handleCancel = () => {
@@ -98,7 +110,7 @@ function RegistrationSecion() {
                             />
                         </div>
                         <div className="register-form-password">
-                            <h3 className="register-form-password-title">Пароль</h3>
+                            <h3 className="register-form-password-title">Пароль (*не менее 8 символов)</h3>
                             <Input.Password 
                             placeholder='********' 
                             style={{marginBottom: '10px'}} 
@@ -141,6 +153,7 @@ function RegistrationSecion() {
                 </div>
             </div>
         </div>
+        {contextHolder}
     </div>
   )
 }

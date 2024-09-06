@@ -21,7 +21,7 @@ const AuthContextProvider = ({ children }) => {
         content: message,
         duration: 3,
       });
-  };
+    };
     const errorMessage = (message) => {
         messageApi.open({
           type: 'error',

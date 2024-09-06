@@ -20,7 +20,7 @@ export default function WelcomeSection() {
                     <h2 className='welcome-text-title'>Добро пожаловать в Cargo Belovodsk KB #1</h2>
                     <p className='welcome-text-description'>Управляйте своими грузовыми перевозками с легкостью. Отслеживайте ваши заказы, просматривайте обновления и обновляйте ваш профиль.</p>
                     <div className='welcome-text-links'>
-                        {isLogged ? <div className='header-links'>
+                        {isLogged ? <div className='welcome-links'>
                             <Link to='/details' className='welcome-text-tracking-link'>Отслеживание Груза</Link>
                             <Link to='/profile' className='welcome-text-profile-link'>Профиль</Link>
                             </div> : <></>}

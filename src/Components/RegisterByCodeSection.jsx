@@ -2,11 +2,12 @@ import React, { useState } from 'react'
 import { Input, Button, ConfigProvider, Select, Modal } from 'antd';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContextProvider';
+import { message } from 'antd';
 
 
 function RegisterByCodeSection() {
 
-    const [modalText, setModalText] = useState('Введите код отпрвленный вам на почту:');
+    const [modalText, setModalText] = useState('Введите код отправленный вам на почту:');
     const [personalCode, setPersonalCode] = useState("");
     const [code, setCode] = useState("");
     const [isOk, setIsOk] = useState(false);
@@ -17,13 +18,24 @@ function RegisterByCodeSection() {
     const [phone, setPhone] = useState("");
     const [pickupPoint, setPickupPoint] = useState("");
     const { registerWithCode, handleCode } = useAuth();
+    const [messageApi, contextHolder] = message.useMessage();
+    const errorMessage = (message) => {
+        messageApi.open({
+          type: 'error',
+          content: message,
+          duration: 3,
+        });
+    };
   
     async function handleRegister(email, password, name, surname, phone, pickupPoint, personalCode) {
-      let res = await registerWithCode({ email, password, name, surname, phone, pickupPoint, personalCode });
-      if(res.status != 400) {
-        setIsOk(true);
-      }
-      setPickupPoint('Беловодск');
+      if(password.length >= 8) {
+        let res = await registerWithCode({ email, password, name, surname, phone, pickupPoint, personalCode });
+        if(res.status != 400) {
+            setIsOk(true);
+        }
+      } else {
+            errorMessage("Пароль должен содержать 8 или более символов!");
+        }
     }
 
     const handleCancel = () => {
@@ -106,7 +118,7 @@ function RegisterByCodeSection() {
                             />
                         </div>
                         <div className="register-form-password">
-                            <h3 className="register-form-password-title">Пароль</h3>
+                            <h3 className="register-form-password-title">Пароль (*не менее 8 символов)</h3>
                             <Input.Password 
                             placeholder='********' 
                             style={{marginBottom: '10px'}} 
@@ -149,6 +161,7 @@ function RegisterByCodeSection() {
                 </div>
             </div>
         </div>
+        {contextHolder}
     </div>
   )
 }

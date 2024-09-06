@@ -40,7 +40,7 @@ function RegisterByCodeSection() {
 
     const handleCancel = () => {
         setIsOk(false);
-        setModalText('Введите код отпрвленный вам на почту:')
+        setModalText('Введите код отправленный вам на почту:')
       };
 
     const handleOk = async () => {

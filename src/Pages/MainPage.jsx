@@ -1,4 +1,5 @@
 import React, { useEffect } from 'react'
+import { Explain } from '../Components/Explain'
 import KeyMetricsSection from '../Components/KeyMetricsSection'
 import OurAdressesSection from '../Components/OurAdressesSection'
 import PickUpSection from '../Components/PickUpSection'
@@ -18,6 +19,7 @@ export default function MainPage() {
 
   return (
     <>
+        <Explain/>
         <WelcomeSection/>
         <KeyMetricsSection/>
         <OurAdressesSection/>

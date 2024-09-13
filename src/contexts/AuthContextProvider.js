@@ -74,10 +74,12 @@ const AuthContextProvider = ({ children }) => {
 
       try {
         const res = await axios.post(`${APIID}registration/`, formData, config);
+        navigate('/signin');
+        successMessage("Вы успешно зарегистрировались!");
         return res;
       } catch (e) {
         setError('error occured');
-        errorMessage("Данные неверны либо пользователь уже существует");
+        errorMessage("Ошибка при создании пользователя");
         return e.response;
       }
     };
@@ -97,10 +99,12 @@ const AuthContextProvider = ({ children }) => {
   
         try {
           const res = await axios.post(`${APIID}registration/oldcode/`, formData, config);
+          navigate('/signin');
+          successMessage("Вы успешно зарегистрировались!");
           return res;
         } catch (e) {
           setError('error occured');
-          errorMessage("Данные неверны либо пользователь уже существует");
+          errorMessage("Ошибка при создании пользователя");
           return e.response;
         }
       };

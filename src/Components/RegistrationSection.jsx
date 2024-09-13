@@ -8,16 +8,14 @@ import { message } from 'antd';
 
 function RegistrationSecion() {
 
-    const [modalText, setModalText] = useState('Введите код отправленный вам на почту:')
-    const [code, setCode] = useState("");
-    const [isOk, setIsOk] = useState(false);
     const [email, setEmail] = useState("");
     const [password, setPassword] = useState("");
+    const [confirmPassword, setConfirmPassword] = useState("");
     const [name, setName] = useState("");
     const [surname, setSurname] = useState("");
     const [phone, setPhone] = useState("");
     const [pickupPoint, setPickupPoint] = useState("");
-    const { register, handleCode } = useAuth();
+    const { register } = useAuth();
     const [messageApi, contextHolder] = message.useMessage();
     const errorMessage = (message) => {
         messageApi.open({
@@ -26,44 +24,36 @@ function RegistrationSecion() {
           duration: 3,
         });
     };
+
+    const validatePassword = (password) => {
+        const regex = /^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{8,}$/;
+        
+        return regex.test(password);
+    };
+
+    const validateEmail = (email) => {
+        const regex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+        
+        return regex.test(email);
+    };
   
     async function handleRegister(email, password, name, surname, phone, pickupPoint) {
-      if(password.length >= 8) {
-        let res = await register({ email, password, name, surname, phone, pickupPoint });
-        if(res.status != 400) {
-            setIsOk(true);
+        if(validatePassword(password) && validateEmail(email) && password == confirmPassword) {
+            let res = await register({ email, password, name, surname, phone, pickupPoint });
+            if(res.status != 201 || res.status != 200) {
+                errorMessage(res.data.error);
+            }
+        }   else if(password != confirmPassword) {
+            errorMessage("Пароли не совпадают!")
+        }   else if(!validatePassword(password)) {
+                errorMessage("Пароль должен содержать как минимум одну латинскую букву и одну цифру и состоять из 8 символов и более");
+        }   else if(!validateEmail(email)) {
+                errorMessage("Некорректный формат email");
         }
-      } else {
-            errorMessage("Пароль должен содержать 8 или более символов!")
-      }
     }
-
-    const handleCancel = () => {
-        setIsOk(false);
-        setModalText('Введите код отправленный вам на почту:')
-      };
-
-    const handleOk = async () => {
-        let res = await handleCode(code, phone);
-        if(res.status !== 200) {
-            setModalText('Введенный код неверен, попробуйте еще раз!')
-        }
-      };
 
   return (
     <div className='register-bg'>
-        <Modal
-        open={isOk}
-        onOk={handleOk}
-        onCancel={handleCancel}
-        >
-            <p>{modalText}</p>
-            <Input 
-                placeholder='XXXXXX'
-                onChange={(e) => setCode(e.target.value)}
-                value={code}
-            />
-      </Modal>
         <div className="container">
             <div className="register-section-wrapper">
                 <div className="register-section">
@@ -110,12 +100,21 @@ function RegistrationSecion() {
                             />
                         </div>
                         <div className="register-form-password">
-                            <h3 className="register-form-password-title">Пароль (*не менее 8 символов)</h3>
+                            <h3 className="register-form-password-title">Пароль (*не менее 8 символов, цифры и буквы латиницы)</h3>
                             <Input.Password 
                             placeholder='********' 
                             style={{marginBottom: '10px'}} 
                             onChange={(e) => setPassword(e.target.value)}
                             value={password}
+                            />
+                        </div>
+                        <div className="register-form-password">
+                            <h3 className="register-form-password-title">Подтвердите пароль</h3>
+                            <Input.Password 
+                            placeholder='********' 
+                            style={{marginBottom: '10px'}} 
+                            onChange={(e) => setConfirmPassword(e.target.value)}
+                            value={confirmPassword}
                             />
                         </div>
                         <div className="register-form-btn">

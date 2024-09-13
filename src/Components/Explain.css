@@ -1,0 +1,17 @@
+.bg {
+    background: yellow;
+    margin: 0;
+}
+
+.mainpage-explain-text {
+    padding: 10px;
+}
+
+.mainpage-explain-text h3 {
+    margin: 0;
+    font-weight: 300;
+}
+
+.bold-text {
+    font-weight: 800;
+}

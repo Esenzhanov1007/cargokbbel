@@ -46,7 +46,7 @@ const AuthContextProvider = ({ children }) => {
       };
 
       try {
-      const { data } = await axios(`https://api.cargokbbelovodsk1.kg/api/v1/track/`, formData, config);
+      const { data } = await axios.post(`https://api.cargokbbelovodsk1.kg/api/v1/track/`, formData, config);
       successMessage("Груз добавлен!")
         return data;
       } catch (e) {
@@ -72,9 +72,6 @@ const AuthContextProvider = ({ children }) => {
     const deleteTrack = async (code) => {
       let token = JSON.parse(localStorage.getItem('token')).key;
       const Authorization = `Token ${token}`;
-      const config ={
-        headers: {'Content-type': 'application/json',Authorization},
-      };
 
       let formData = new FormData();
       formData.append('track_code', code);

@@ -34,6 +34,28 @@ const AuthContextProvider = ({ children }) => {
     const [error, setError] = useState('');
     const navigate = useNavigate();
 
+    const postTrack = async (code) => {
+      let token = JSON.parse(localStorage.getItem('token')).key;
+      let formData = new FormData();
+      formData.append('track_code', code);
+      
+      const Authorization = `Token ${token}`;
+
+      const config ={
+        headers: {'Content-Type': 'application/json',Authorization},
+      };
+
+      try {
+      const { data } = await axios(`https://api.cargokbbelovodsk1.kg/api/v1/track/`, formData, config);
+      successMessage("Груз добавлен!")
+        return data;
+      } catch (e) {
+        setError('error occured');
+        errorMessage("Произошла ошибка!");
+        return e.response;
+      }
+    }
+
     const getTracks = async () => {
         let token = JSON.parse(localStorage.getItem('token')).key;
         
@@ -45,6 +67,34 @@ const AuthContextProvider = ({ children }) => {
         const { data } = await axios(`https://api.cargokbbelovodsk1.kg/api/v1/track/`, config);
 
         return data;
+    }
+
+    const deleteTrack = async (code) => {
+      let token = JSON.parse(localStorage.getItem('token')).key;
+      const Authorization = `Token ${token}`;
+      const config ={
+        headers: {'Content-type': 'application/json',Authorization},
+      };
+
+      let formData = new FormData();
+      formData.append('track_code', code);
+
+      try {
+        const { data } = axios.delete(`https://api.cargokbbelovodsk1.kg/api/v1/track/`, {
+            headers: {
+              Authorization
+            },
+            data: {
+                track_code : code,
+            }
+          });        
+        successMessage("Груз удален!")
+        return data;
+      } catch (e) {
+        setError('error occured');
+        errorMessage("Произошла ошибка!");
+        return e.response;
+      }
     }
 
     const getUserData = async () => {
@@ -237,7 +287,9 @@ const AuthContextProvider = ({ children }) => {
           logout,
           handleCode,
           editUser,
+          postTrack,
           getTracks,
+          deleteTrack,
           handleResetReq,
           handleResetConf,
           isAuth: !!user,

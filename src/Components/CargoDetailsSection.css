@@ -1,5 +1,6 @@
 .details-bg {
     background: #E3E4E6;
+    min-height: 80vh;
 }
 
 .details-section {

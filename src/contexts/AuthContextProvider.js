@@ -4,7 +4,7 @@ import axios from 'axios'
 import { useNavigate } from 'react-router-dom';
 import { message } from 'antd';
 
-const APIID = 'https://api.cargokbbelovodsk1.kg/api/v1/users/'
+const APIID = 'https://api.asia-cargo.kg/api/v1/users/'
 
 export const authContext = createContext();
 
@@ -46,7 +46,7 @@ const AuthContextProvider = ({ children }) => {
       };
 
       try {
-      const { data } = await axios.post(`https://api.cargokbbelovodsk1.kg/api/v1/track/`, formData, config);
+      const { data } = await axios.post(`https://api.asia-cargo.kg/api/v1/track/`, formData, config);
       successMessage("Груз добавлен!")
         return data;
       } catch (e) {
@@ -64,10 +64,23 @@ const AuthContextProvider = ({ children }) => {
         const config ={
           headers: {'Content-Type':'multipart/form-data',Authorization},
         };
-        const { data } = await axios(`https://api.cargokbbelovodsk1.kg/api/v1/track/`, config);
+        const { data } = await axios(`https://api.asia-cargo.kg/api/v1/track/`, config);
 
         return data;
     }
+
+    const getArrivedTracks = async () => {
+      let token = JSON.parse(localStorage.getItem('token')).key;
+      
+      const Authorization = `Token ${token}`;
+
+      const config ={
+        headers: {'Content-Type':'multipart/form-data',Authorization},
+      };
+      const { data } = await axios(`https://api.asia-cargo.kg/api/v1/arrival_track/`, config);
+
+      return data;
+  }
 
     const deleteTrack = async (code) => {
       let token = JSON.parse(localStorage.getItem('token')).key;
@@ -77,7 +90,7 @@ const AuthContextProvider = ({ children }) => {
       formData.append('track_code', code);
 
       try {
-        const { data } = axios.delete(`https://api.cargokbbelovodsk1.kg/api/v1/track/`, {
+        const { data } = axios.delete(`https://api.asia-cargo.kg/api/v1/track/`, {
             headers: {
               Authorization
             },
@@ -114,7 +127,7 @@ const AuthContextProvider = ({ children }) => {
       let formData = new FormData();
       formData.append('name', user.name);
       formData.append('surname', user.surname);
-      formData.append('phone', user.phone);
+      formData.append('phone', user.newPhone);
       formData.append('pickup_point', user.pickupPoint);
       formData.append('email', user.email);
       formData.append('password', user.password);
@@ -138,7 +151,7 @@ const AuthContextProvider = ({ children }) => {
         let formData = new FormData();
         formData.append('name', user.name);
         formData.append('surname', user.surname);
-        formData.append('phone', user.phone);
+        formData.append('phone', user.newPhone);
         formData.append('pickup_point', user.pickupPoint);
         formData.append('email', user.email);
         formData.append('password', user.password);
@@ -286,6 +299,7 @@ const AuthContextProvider = ({ children }) => {
           editUser,
           postTrack,
           getTracks,
+          getArrivedTracks,
           deleteTrack,
           handleResetReq,
           handleResetConf,

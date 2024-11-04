@@ -1,7 +1,7 @@
 import React from 'react'
 import { convertDate } from '../helpers/dateConverter'
 
-const baseURL = 'https://api.cargokbbelovodsk1.kg';
+const baseURL = 'https://api.asia-cargo.kg';
 
 export const RecentCargo = (props) => {
 

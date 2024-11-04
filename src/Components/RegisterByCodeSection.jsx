@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Input, Button, ConfigProvider, Modal } from 'antd';
+import { Input, Button, ConfigProvider } from 'antd';
 import { Link } from 'react-router-dom';
 import { useAuth } from '../contexts/AuthContextProvider';
 import { message } from 'antd';
@@ -39,7 +39,8 @@ function RegisterByCodeSection() {
   
     async function handleRegister(email, password, name, surname, phone, pickupPoint, personalCode) {
       if(validatePassword(password) && validateEmail(email) && password == confirmPassword) {
-        let res = await registerWithCode({ email, password, name, surname, phone, pickupPoint, personalCode });
+        let newPhone = `+996${phone}`
+        let res = await registerWithCode({ email, password, name, surname, newPhone, pickupPoint, personalCode });
         if(res.status != 201 || res.status != 200) {
             errorMessage(res.data.error);
         }
@@ -93,8 +94,9 @@ function RegisterByCodeSection() {
                         </div>
                         <div className="register-form-phone">
                             <h3 className='register-form-phone-title'>Номер</h3>
-                            <Input 
-                            placeholder='+996555123456'
+                            <Input
+                            addonBefore="+996"
+                            placeholder='555123456'
                             onChange={(e) => setPhone(e.target.value)}
                             value={phone}
                             />
@@ -153,7 +155,7 @@ function RegisterByCodeSection() {
                             </div>
                             <div>
                                 <span className='have-code'>Зарегистрироваться без кода?</span>
-                                <Link className='login-form-usecode-btn' to='/register'>Зарегистрироваться</Link>
+                                <Link className='login-form-usecode-btn' to='/signup'>Зарегистрироваться</Link>
                             </div>
                         </div>
                     </div>

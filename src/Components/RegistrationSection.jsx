@@ -39,7 +39,8 @@ function RegistrationSecion() {
   
     async function handleRegister(email, password, name, surname, phone, pickupPoint) {
         if(validatePassword(password) && validateEmail(email) && password == confirmPassword) {
-            let res = await register({ email, password, name, surname, phone, pickupPoint });
+            let newPhone = "+996" + phone;
+            let res = await register({ email, password, name, surname, newPhone, pickupPoint });
             if(res.status != 201 || res.status != 200) {
                 errorMessage(res.data.error);
             }
@@ -85,8 +86,9 @@ function RegistrationSecion() {
                         </div>
                         <div className="register-form-phone">
                             <h3 className='register-form-phone-title'>Номер</h3>
-                            <Input 
-                            placeholder='+996555123456'
+                            <Input
+                            addonBefore="+996"
+                            placeholder='555123456'
                             onChange={(e) => setPhone(e.target.value)}
                             value={phone}
                             />

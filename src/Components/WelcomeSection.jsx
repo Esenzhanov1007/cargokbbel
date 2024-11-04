@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import { Link, useLocation } from 'react-router-dom';
 import './WelcomeSection.css';
+import logo from '../assets/images/logo.png';
 
 export default function WelcomeSection() {
 
@@ -17,7 +18,7 @@ export default function WelcomeSection() {
         <div className='container'>
             <div className='welcome-section'>
                 <div className='welcome-text'>
-                    <h2 className='welcome-text-title'>Добро пожаловать в Cargo Belovodsk KB #1</h2>
+                    <h2 className='welcome-text-title'>Добро пожаловать в Asia Cargo</h2>
                     <p className='welcome-text-description'>Управляйте своими грузовыми перевозками с легкостью. Отслеживайте ваши заказы, просматривайте обновления и обновляйте ваш профиль.</p>
                     <div className='welcome-text-links'>
                         {isLogged ? <div className='welcome-links'>
@@ -32,7 +33,7 @@ export default function WelcomeSection() {
                     </div>
                 </div>
                 <div className='welcome-image-container'>
-                    <img src="https://us.123rf.com/450wm/sentavio/sentavio1701/sentavio170100087/69594465-truck-delivery-cargo-logo-design-vector-template-lorry-auto-car-vehicle-logotype-silhouette-negative.jpg?ver=6" alt="cargo-logo" className='welcome-image' />
+                    <img src={logo} alt="cargo-logo" className='welcome-image' />
                 </div>
             </div>
         </div>

@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import './ProfileData.css'
-import { Input, Select, Button, ConfigProvider } from 'antd';
+import { Input, Button, ConfigProvider } from 'antd';
 import { useAuth } from '../contexts/AuthContextProvider';
+import logo from "../assets/images/logo.png";
 
 export default function ProfileData() {
     const { logout, getUserData, editUser } = useAuth();
@@ -85,7 +86,7 @@ export default function ProfileData() {
                         </div>
                     </div>
                     <div className="profile-logo">
-                        <img src="https://us.123rf.com/450wm/sentavio/sentavio1701/sentavio170100087/69594465-truck-delivery-cargo-logo-design-vector-template-lorry-auto-car-vehicle-logotype-silhouette-negative.jpg?ver=6" alt="cargo logo" className='profile-logo-img'/>
+                        <img src={logo} alt="cargo logo" className='profile-logo-img'/>
                     </div>
                 </div>
             </div>

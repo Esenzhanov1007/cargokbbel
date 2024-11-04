@@ -9,10 +9,9 @@ function CargoDetails(props) {
     const { deleteTrack } = useAuth();
 
     const data = [
-        `Вес: ${props.track.weight ? props.track.weight : '-'} кг`,
-        `Цена: ${props.track.price ? props.track.price : '-'} сом`,
         `Китай`,
-        `Кыргызстан`
+        `Кыргызстан`,
+        `Получено`
     ];
 
     async function handleDeleteTrack(code) {
@@ -30,9 +29,10 @@ function CargoDetails(props) {
                 dataSource={data}
                 renderItem={(item) => {
                     if(item == "Китай") {
-                        return <List.Item>{props.track.warehouse_china ? <CheckCircleTwoTone twoToneColor="#5FCF73"/> : <MinusCircleTwoTone twoToneColor="#5E5E5E"/>} Склад в Китае</List.Item>
-                    } else if (item == "Кыргызстан") {
-                        return <List.Item>{props.track.warehouse_kg ? <CheckCircleTwoTone twoToneColor="#5FCF73"/> : <MinusCircleTwoTone twoToneColor="#5E5E5E"/>} Пункт получения</List.Item>
+                        return <List.Item>{props.track.warehouse_china ? <CheckCircleTwoTone twoToneColor="#5FCF73"/> : <MinusCircleTwoTone twoToneColor="#5E5E5E"/>} Склад в Китае {props?.track?.date_arrival_china ? `(${props?.track?.date_arrival_china})` : ""}</List.Item>                    } else if (item == "Кыргызстан") {
+                        return <List.Item>{props.track.warehouse_kg ? <CheckCircleTwoTone twoToneColor="#5FCF73"/> : <MinusCircleTwoTone twoToneColor="#5E5E5E"/>} Пункт получения {props?.track?.date_arrival_kg ? `(${props?.track?.date_arrival_kg})` : ""}</List.Item>
+                    } else if (item == "Получено") {
+                        return <List.Item>{props.track.received_by_client ? <CheckCircleTwoTone twoToneColor="#5FCF73"/> : <MinusCircleTwoTone twoToneColor="#5E5E5E"/>} Получено {props?.track?.date_received_by_client ? `(${props?.track?.date_received_by_client})` : ""}</List.Item>
                     } else {
                         return <List.Item>{item}</List.Item>
                     }

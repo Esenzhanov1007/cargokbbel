@@ -25,11 +25,15 @@
     font-size: 24px;
 }
 
+.header-links-arrived-btn {
+    margin-right: 20px;
+}
+
 .header-links-profile-btn {
     margin-left: 20px;
 }
 
-.header-links-tracking-btn, .header-links-profile-btn {
+.header-links-tracking-btn, .header-links-profile-btn, .header-links-arrived-btn {
     text-decoration: none;
     color: #fff;
 }
@@ -41,6 +45,12 @@
 }
 
 .header-links-profile-btn:hover{
+    text-decoration: none;
+    color: #fff;
+    opacity: .5;
+}
+
+.header-links-arrived-btn:hover {
     text-decoration: none;
     color: #fff;
     opacity: .5;

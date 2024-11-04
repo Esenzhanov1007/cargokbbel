@@ -3,6 +3,7 @@ import { Route, Routes } from "react-router-dom";
 import RegisterByCode from "../Components/RegisterByCodeSection";
 import { authContext } from "../contexts/AuthContextProvider";
 import CargoDetailsPage from "../Pages/CargoDetailsPage";
+import ArrivedCargoPage from "../Pages/ArrivedCargoPage";
 import LoginPage from "../Pages/LoginPage";
 import MainPage from '../Pages/MainPage'
 import NotFoundPage from "../Pages/NotFoundPage";
@@ -31,6 +32,11 @@ const MainRoutes = () => {
     link: "/details",
     element: <CargoDetailsPage />,
     id: 3,
+  },
+  {
+    link: "/arrived",
+    element: <ArrivedCargoPage />,
+    id: 7,
   },
   ];
 

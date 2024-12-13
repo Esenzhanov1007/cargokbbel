@@ -16,8 +16,9 @@ export default function ProfileData() {
     useEffect(() => {
         async function fetchData() {
             let res = await getUserData();
+            let shortUserCode = res.profile_data.individual_code.slice(3);
             setUserName(res.profile_data.name);
-            setUserCode(res.profile_data.individual_code);
+            setUserCode(shortUserCode);
             setUserPhone(res.profile_data.phone);
             setUserPickup(res.profile_data.pickup_point)
             setUserSurname(res.profile_data.surname);
@@ -55,7 +56,7 @@ export default function ProfileData() {
                             </div>
                             <div className='profile-data-code profile-data-input-wrapper'>
                                 <h3 className='profile-data-input-title'>Индивидуальный код</h3>
-                                <Input size='large' disabled value={userCode} onChange={(e) => setUserCode(e.target.value)} style={{background: "#fff"}}/>
+                                <Input size='large' disabled value={userCode} style={{background: "#fff"}}/>
                             </div>
                             <div className='profile-data-pickup profile-data-input-wrapper'>
                                 <h3 className='profile-data-input-title'>Пункт выдачи</h3>
